@@ -11,7 +11,10 @@ sickle_cell_freq.write("Generation\tFreq_S\tFreq_SS\tFreq_AS\tFreq_AA\n")
 # הגדרת לולאה שבה התוכנית מחשבת את תדירות הגנוטיפים והאללים החדשה עבור כל דור.
 for i in range(1, num_gen+1):
     
+    #חישוב תדירות האלל HbA
     p_A = 1 - q_S
+    
+    # חישוב תדירות הגנוטיפים.
     AS = 2*p_A*q_S
     AA = p_A**2
     SS = q_S**2
@@ -21,5 +24,6 @@ for i in range(1, num_gen+1):
 
     sickle_cell_freq.write(f"{i}\t{round(q_S,5)}\t{round(SS,5)}\t{round(AS,5)}\t{round(AA,5)}\n")
 
+# סגירת הקובץ.
 sickle_cell_freq.close()
     
